@@ -37,10 +37,10 @@ if(BUILD_TESTS)
     FetchContent_MakeAvailable(googletest)
     enable_testing()
     
-    add_executable(my_tests 
-        tests/main_test.cpp     
-        tests/thread_pool_tests.cpp  
-        src/thread_pool.cpp          
+     add_executable(my_tests 
+        tests/main_test.cpp          
+        tests/thread_pool_tests.cpp
+        src/thread_pool.cpp 
     )
     target_link_libraries(my_tests GTest::gtest_main)
     target_include_directories(my_tests PRIVATE include)
