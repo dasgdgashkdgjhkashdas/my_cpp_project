@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: my_cpp_app
+    volumes:
+      - ./build:/app/build
+    command: ./my_app
+
+  test:
+    build: .
+    container_name: my_cpp_test
+    command: ./my_tests
+    depends_on:
+      - app
